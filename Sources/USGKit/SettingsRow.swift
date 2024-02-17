@@ -34,7 +34,7 @@ public class SettingsRow: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(key: String, text: String = "") {
+    public init(key: String, text: String = "") {
         super.init(frame: .zero)
         title.text = text
         control.key = key
