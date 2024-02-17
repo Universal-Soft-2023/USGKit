@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     func setMainBackground() {
         self.backgroundColor = UGKMainBackgroundColor
     }
@@ -17,25 +17,20 @@ extension UIView {
         self.backgroundColor = UGKMainThemeColor
     }
     
-    func additional(_ additional: ((UIView) -> Void)) -> UIView {
-        additional(self)
-        return self
-    }
-    
     func leftUpperButtonConstraints() {
-        self
-            .left(UGKUpperButtonSideInset)
-            .top(UGKUpperButtonTopInset)
-            .width(UGKUpperButtonWidth)
-            .height(UGKUpperButtonHeight)
+        guard let superV = superview else { return }
+        self.leftAnchor.constraint(equalTo: superV.leftAnchor, constant: UGKUpperButtonSideInset).isActive = true
+        self.topAnchor.constraint(equalTo: superV.topAnchor, constant: UGKUpperButtonTopInset).isActive = true
+        self.widthAnchor.constraint(equalTo: superV.widthAnchor, constant: UGKUpperButtonWidth).isActive = true
+        self.heightAnchor.constraint(equalTo: superV.heightAnchor, constant: UGKUpperButtonHeight).isActive = true
     }
     
     func rightUpperButtonConstraints() {
-        self
-            .right(UGKUpperButtonSideInset)
-            .top(UGKUpperButtonTopInset)
-            .width(UGKUpperButtonWidth)
-            .height(UGKUpperButtonHeight)
+        guard let superV = superview else { return }
+        self.rightAnchor.constraint(equalTo: superV.rightAnchor, constant: UGKUpperButtonSideInset).isActive = true
+        self.topAnchor.constraint(equalTo: superV.topAnchor, constant: UGKUpperButtonTopInset).isActive = true
+        self.widthAnchor.constraint(equalTo: superV.widthAnchor, constant: UGKUpperButtonWidth).isActive = true
+        self.heightAnchor.constraint(equalTo: superV.heightAnchor, constant: UGKUpperButtonHeight).isActive = true
     }
     
     @discardableResult

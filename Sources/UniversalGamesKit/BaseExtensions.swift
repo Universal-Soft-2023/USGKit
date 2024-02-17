@@ -8,17 +8,14 @@
 import Foundation
 import UIKit
 
-extension Int {
+public extension Int {
     var cgFloat: CGFloat {
         return CGFloat(self)
     }
 }
 
-extension UIFont {
+public extension UIFont {
     static func mainFamilyFont(_ size: CGFloat) -> UIFont {
-        return UIFont(name: mainFontFamily, size: size * mfm) ?? .systemFont(ofSize: size)
+        return UIFont(name: UGKMainFontFamily, size: size * UGKMainFamilyFontMultiplier) ?? .systemFont(ofSize: size)
     }
 }
-//func mainFamilyFont(_ size: CGFloat) -> UIFont {
-//    return UIFont(name: mainFontFamily, size: size * mfm) ?? .systemFont(ofSize: size)
-//}

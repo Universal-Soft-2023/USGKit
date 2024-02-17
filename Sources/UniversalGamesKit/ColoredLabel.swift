@@ -8,13 +8,57 @@
 import Foundation
 import UIKit
 
-class ColoredLabel: UILabel {
-    var buttonSound: Bool = true
+public extension ColoredLabel {
+    static var def: ColoredLabel {
+        let label = ColoredLabel()
+        label.textAlignment = .center
+        label.numberOfLines = 1
+        label.minimumScaleFactor = 0.2
+        label.adjustsFontSizeToFitWidth = true
+        label.textColor = UGKMainThemeColor
+        label.hasOnTapSound = true
+        return label
+    }
+    
+    @discardableResult
+    func onTap(_ val: @escaping (() -> Void)) -> Self {
+        self.onTap = val
+        return self
+    }
+    
+    @discardableResult
+    func hasOnTapSound(_ val: Bool) -> Self {
+        self.hasOnTapSound = val
+        return self
+    }
+    
+    @discardableResult
+    func customOnTapSound(_ val: @escaping (() -> Void)) -> Self {
+        self.customOnTapSound = val
+        return self
+    }
+    
+    @discardableResult
+    func mainFamilyFont(_ ofSize: CGFloat) -> Self {
+        self.font = .mainFamilyFont(ofSize)
+        return self
+    }
+    
+    @discardableResult
+    func textAlignment(_ val: NSTextAlignment) -> Self {
+        self.textAlignment = val
+        return self
+    }
+}
+
+public class ColoredLabel: UILabel {
+    var hasOnTapSound: Bool = true
     var autoscale: Bool = true
 
     private var completion: (() -> Void)?
+    private var customOnTapSound: (() -> Void)?
 
-    var onTap: (() -> Void)? {
+    private var onTap: (() -> Void)? {
         set {
             self.completion = newValue
             self.isUserInteractionEnabled = true
@@ -26,30 +70,13 @@ class ColoredLabel: UILabel {
         }
     }
     
-    init(text: String? = nil, font: UIFont? = nil, alignment: NSTextAlignment = .center, lines: Int = 1, autoscale: Bool = true, color: UIColor = UGKMainThemeColor, tapSound: Bool = true, onTap: (() -> Void)? = nil) {
-        super.init(frame: .zero)
-        self.text = text == nil ? self.text : text
-        self.font = font
-        self.numberOfLines = lines
-        if autoscale {
-            self.minimumScaleFactor = 0.2
-            self.adjustsFontSizeToFitWidth = true
-        }
-        self.textColor = color
-        self.textAlignment = alignment
-        if let a = onTap {
-            self.onTap = a
-        }
-        self.buttonSound = tapSound
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     @objc private func actionOnTap() {
-        if buttonSound {
-            SOUNDS.buttonSound()
+        if hasOnTapSound {
+            if let cus = customOnTapSound {
+                cus()
+            } else {
+                USGDefaultColoredLabelOnTapSound()
+            }
         }
         completion?()
     }

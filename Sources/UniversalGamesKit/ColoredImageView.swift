@@ -8,11 +8,64 @@
 import Foundation
 import UIKit
 
-class ColoredImageView: UIImageView {
+public extension ColoredImageView {
+    static var def: ColoredImageView {
+        let imageView = ColoredImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }
     
-    var buttonSound: Bool = true
+    @discardableResult
+    func onTap(_ val: @escaping (() -> Void)) -> Self {
+        self.onTap = val
+        return self
+    }
     
-    var themeColor: UIColor? = mainThemeColor
+    @discardableResult
+    func hasOnTapSound(_ val: Bool) -> Self {
+        self.hasOnTapSound = val
+        return self
+    }
+    
+    @discardableResult
+    func customOnTapSound(_ val: @escaping (() -> Void)) -> Self {
+        self.customOnTapSound = val
+        return self
+    }
+    
+    @discardableResult
+    func notColoredImg(_ val: UIImage?) -> Self {
+        self.notColoredImage = val
+        return self
+    }
+    
+    @discardableResult
+    func coloredImg(_ val: UIImage?) -> Self {
+        self.coloredImage = val
+        return self
+    }
+    
+    @discardableResult
+    func coloredImage(_ val: UIImage, color: UIColor) -> Self {
+        self.themeColor = color
+        self.coloredImage = val
+        return self
+    }
+    
+    @discardableResult
+    func circled(_ val: Bool) -> Self {
+        self.isCircle = val
+        return self
+    }
+}
+
+public class ColoredImageView: UIImageView {
+    
+    private var hasOnTapSound: Bool = true
+    
+    private var isCircle: Bool = false
+    
+    var themeColor: UIColor? = UGKMainThemeColor
 
     var coloredImage: UIImage? {
         set {
@@ -41,8 +94,9 @@ class ColoredImageView: UIImageView {
     }
     
     private var completion: (() -> Void)?
+    private var customOnTapSound: (() -> Void)?
 
-    var onTap: (() -> Void)? {
+    private var onTap: (() -> Void)? {
         set {
             if newValue == nil {
                 return
@@ -56,48 +110,25 @@ class ColoredImageView: UIImageView {
             completion
         }
     }
-    
-    init(coloredImg: UIImage?, color: UIColor? = nil, tapSound: Bool = true, onTap: (() -> Void)? = nil) {
-        super.init(frame: .zero)
-        if let c = color {
-            self.themeColor = c
-        }
-        if let im = coloredImg {
-            self.coloredImage = im
-        }
-        if let a = onTap {
-            self.onTap = a
-        }
-        self.buttonSound = tapSound
-        contentMode = .scaleAspectFit
-    }
-    
-    init(notColoredImg: UIImage?, tapSound: Bool = true, onTap: (() -> Void)? = nil) {
-        super.init(frame: .zero)
-        self.notColoredImage = notColoredImg
-        if let a = onTap {
-            self.onTap = a
-        }
-        self.buttonSound = tapSound
-        contentMode = .scaleAspectFit
-    }
-    
-    init() {
-        super.init(frame: .zero)
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
+
     @objc private func actionOnTap() {
-        if buttonSound {
-            SOUNDS.buttonSound()
+        if hasOnTapSound {
+            if let cus = customOnTapSound {
+                cus()
+            } else {
+                USGDefaultColoredImageViewOnTapSound()
+            }
         }
         completion?()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if isCircle {
+            self.layer.cornerRadius = self.layer.frame.height / 2
+            clipsToBounds = true
+        } else {
+            self.layer.cornerRadius = 0
+        }
     }
 }

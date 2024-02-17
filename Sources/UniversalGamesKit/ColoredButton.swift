@@ -8,17 +8,31 @@
 import Foundation
 import UIKit
 
-class ColoredButton: UIView {
+public extension ColoredButton {
+    static var def: ColoredButton {
+        let button = ColoredButton()
+        return button
+    }
     
-    var label = UILabel()
-    var buttonSound: Bool = true
-    var autoscale: Bool = true
+    var defaultConfig: Self {
+        return self
+    }
+    
+    
+}
+
+public class ColoredButton: UIView {
+    
+    private var label = UILabel()
+    private var buttonSound: Bool = true
+    private var autoscale: Bool = true
 
     var cornerRadiusDel: Int = 3
 
     private var completion: (() -> Void)?
+    private var customOnTapSound: (() -> Void)?
 
-    var onTap: (() -> Void)? {
+    private var onTap: (() -> Void)? {
         set {
             self.completion = newValue
             self.isUserInteractionEnabled = true
@@ -56,8 +70,8 @@ class ColoredButton: UIView {
         cornerRadiusDel: Int = 3,
         lines: Int = 1,
         autoscale: Bool = true,
-        color: UIColor = UGKMainThemeColor,
-        textColor: UIColor = UGKMainBackgroundColor,
+        color: UIColor = mainThemeColor,
+        textColor: UIColor = mainBackgroundColor,
         tapSound: Bool = true,
         alignment: NSTextAlignment = .center,
         onTap: (() -> Void)? = nil
@@ -79,10 +93,11 @@ class ColoredButton: UIView {
         self.buttonSound = tapSound
         
         addWithAutolayout(label)
-            .top(verticalPadding)
-            .bottom(verticalPadding)
-            .left(horizontalPadding)
-            .right(horizontalPadding)
+        label.topAnchor.constraint(equalTo: self.topAnchor, constant: verticalPadding).isActive = true
+        label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: verticalPadding).isActive = true
+        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: verticalPadding).isActive = true
+        label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: verticalPadding).isActive = true
+
         
         self.cornerRadiusDel = cornerRadiusDel
     }
@@ -93,7 +108,11 @@ class ColoredButton: UIView {
     
     @objc private func actionOnTap() {
         if buttonSound {
-            SOUNDS.buttonSound()
+            if let cus = customOnTapSound {
+                cus()
+            } else {
+                USGDefaultColoredButtonOnTapSound()
+            }
         }
         completion?()
     }
@@ -104,3 +123,5 @@ class ColoredButton: UIView {
         self.layer.masksToBounds = true
     }
 }
+
+

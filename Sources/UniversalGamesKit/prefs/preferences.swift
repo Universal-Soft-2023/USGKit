@@ -14,9 +14,11 @@ public var UGKMainFamilyFontMultiplier: CGFloat = 1
 public var UGKMainBackgroundColor: UIColor = .white
 public var UGKMainThemeColor: UIColor = .black
 
+public var USGColoredSwitchDefaultIsCircleValue = false
 
 
-var hasSafeArea: Bool {
+
+public var hasSafeArea: Bool {
     guard #available(iOS 11.0, *), let topPadding = UIApplication.shared.keyWindow?.safeAreaInsets.top, topPadding > 24 else {
         return false
     }
@@ -41,15 +43,15 @@ public var iphone13width: CGFloat {
     return 390
 }
 
-var screenHeightMultiplyer: CGFloat {
+public var screenHeightMultiplyer: CGFloat {
     return screenHeight / iphone13height
 }
 
-var screenWidthMultiplyer: CGFloat {
+public var screenWidthMultiplyer: CGFloat {
     return screenWidth / iphone13width
 }
 
-var isOldScreen: Bool {
+public var isOldScreen: Bool {
     let prop = UIScreen.main.bounds.width / UIScreen.main.bounds.height
     if prop > 0.5 {
         return true
@@ -64,3 +66,32 @@ public var UGKUpperButtonSideInset: CGFloat = 30 * screenWidthMultiplyer
 public var UGKUpperButtonTopInset: CGFloat = 60 * screenHeightMultiplyer
 public var UGKUpperButtonWidth: CGFloat = 60 * screenHeightMultiplyer
 public var UGKUpperButtonHeight: CGFloat = 70 - (isOldScreen ? 30 : 0)
+
+
+
+
+
+
+
+
+public var USGDefaultColoredLabelOnTapSound: (() -> Void) = {
+}
+
+public var USGDefaultColoredButtonOnTapSound: (() -> Void) = {
+}
+
+public var USGDefaultColoredImageViewOnTapSound: (() -> Void) = {
+}
+
+public var USGDefaultColoredSwitchOnTapSound: (() -> Void) = {
+}
+
+
+
+public var USGSelfAdsThisApp: SelfAds?
+
+public var USGSelfAdsExcept: [SelfAds] = [
+    
+]
+
+public var USGSelfAdsUpdateSeconds: Double = 60

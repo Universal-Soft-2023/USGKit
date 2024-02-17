@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     func push(_ vc: UIViewController, animated: Bool = true) {
         if let nc = self.navigationController {
             nc.pushViewController(vc, animated: animated)

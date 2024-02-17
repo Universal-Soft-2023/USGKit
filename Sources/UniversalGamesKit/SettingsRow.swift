@@ -8,10 +8,13 @@
 import Foundation
 import UIKit
 
-let settingsRowFont = UIFont.mainFamilyFont(36)
+let settingsRowFontSize = 36 * UGKMainFamilyFontMultiplier
 
-class SettingsRow: UIView {
-    let title = ColoredLabel(font: settingsRowFont, alignment: .left)
+public class SettingsRow: UIView {
+    let title = ColoredLabel.def
+        .mainFamilyFont(settingsRowFontSize)
+        .textAlignment(.left)
+    
     let control = ColoredSwitch()
     
     init() {
@@ -31,16 +34,16 @@ class SettingsRow: UIView {
     
     func setHierarchy() {
         self.addWithAutolayout(title)
-            .top()
-            .bottom()
-            .left()
-            .right(100)
+        title.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        title.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        title.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        title.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 100).isActive = true
+        
         
         self.addWithAutolayout(control)
-            .height(40)
-            .width(70)
-            .centerY()
-            .right()
-        
+        title.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        title.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        title.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        title.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
     }
 }

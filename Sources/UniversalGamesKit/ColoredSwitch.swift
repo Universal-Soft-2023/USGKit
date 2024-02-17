@@ -8,11 +8,8 @@
 import Foundation
 import UIKit
 
-let coloredSwitchDefaultIsCircleValue = false
 
-class ColoredSwitch: UIView {
-    
-
+public class ColoredSwitch: UIView {
     
     private var offFrame: CGRect {
         let f = self.frame
@@ -57,7 +54,7 @@ class ColoredSwitch: UIView {
         }
     }
     
-    var isCircle: Bool = coloredSwitchDefaultIsCircleValue
+    var isCircle: Bool = USGColoredSwitchDefaultIsCircleValue
     
     var key: String? = nil {
         didSet {
@@ -71,7 +68,7 @@ class ColoredSwitch: UIView {
         key: String,
         mainColor: UIColor = UGKMainThemeColor,
         backgroundColor: UIColor = UIColor(white: 0, alpha: 0.3),
-        isCircle: Bool = coloredSwitchDefaultIsCircleValue,
+        isCircle: Bool = USGColoredSwitchDefaultIsCircleValue,
         borderWidth: CGFloat = 4,
         switcherPadding: CGFloat = 4,
         switchSound: Bool = true
@@ -99,7 +96,6 @@ class ColoredSwitch: UIView {
     
     func setHierarchy() {
         clipsToBounds = true
-        self.addTapGestureRecognizer(action: { [weak self] in self?.onTap() })
         self.addSubview(switcher)
         
         switcher.backgroundColor = mainColor
@@ -107,6 +103,9 @@ class ColoredSwitch: UIView {
         self.layer.borderWidth = borderWidth
         
         setValue(animated: false)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTap))
+        self.addGestureRecognizer(tap)
     }
     
     override func layoutSubviews() {
@@ -123,13 +122,13 @@ class ColoredSwitch: UIView {
     
     
     
-    private func onTap() {
+    @objc private func onTap() {
         guard let key = key else { return }
         let val = UserDefaults.standard.bool(forKey: key)
         UserDefaults.standard.set(!val, forKey: key)
         setValue()
-        if GLOBAL.isSoundOn {
-            SOUNDS.switchSound()
+        if switchSound {
+            USGDefaultColoredSwitchOnTapSound()
         }
     }
     
