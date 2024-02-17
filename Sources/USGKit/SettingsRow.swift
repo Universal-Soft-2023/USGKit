@@ -22,7 +22,6 @@ public final class SettingsRow: UIView {
     
     let title = ColoredLabel.def
         .mainFamilyFont(settingsRowFontSize)
-        .textAlignment(.left)
     
     let control = ColoredSwitch()
     
@@ -50,9 +49,11 @@ public final class SettingsRow: UIView {
         
         
         self.addWithAutolayout(control)
-        title.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        title.widthAnchor.constraint(equalToConstant: 70).isActive = true
-        title.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        title.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        control.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        control.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        control.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        control.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        
+        title.textAlignment = .left
     }
 }

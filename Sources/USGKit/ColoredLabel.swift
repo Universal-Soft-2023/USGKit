@@ -43,18 +43,6 @@ public extension ColoredLabel {
         self.font = .mainFamilyFont(ofSize)
         return self
     }
-    
-    @discardableResult
-    func textAlignment(_ val: NSTextAlignment) -> Self {
-        self.textAlignment = val
-        return self
-    }
-    
-    @discardableResult
-    func font(_ val: UIFont?) -> Self {
-        self.font = val
-        return self
-    }
 }
 
 public final class ColoredLabel: UILabel {

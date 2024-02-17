@@ -16,7 +16,7 @@ extension UIColor {
 
 fileprivate var updateSeconds: Double { USGSelfAdsUpdateSeconds }
 
-public final enum SelfAds: CaseIterable {
+public enum SelfAds: CaseIterable {
     
     static var thisApp: Self? { USGSelfAdsThisApp }
     
