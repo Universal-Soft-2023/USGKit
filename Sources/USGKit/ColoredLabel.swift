@@ -9,6 +9,10 @@ import Foundation
 import UIKit
 
 public extension ColoredLabel {
+    
+}
+
+public final class ColoredLabel: UILabel {
     static var def: ColoredLabel {
         let label = ColoredLabel()
         label.textAlignment = .center
@@ -134,9 +138,15 @@ public extension ColoredLabel {
         closure(self)
         return self
     }
-}
-
-public final class ColoredLabel: UILabel {
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var hasOnTapSound: Bool = true
     var autoscale: Bool = true
 
