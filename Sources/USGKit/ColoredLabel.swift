@@ -57,7 +57,7 @@ public extension ColoredLabel {
     }
 }
 
-public class ColoredLabel: UILabel {
+public final class ColoredLabel: UILabel {
     var hasOnTapSound: Bool = true
     var autoscale: Bool = true
 

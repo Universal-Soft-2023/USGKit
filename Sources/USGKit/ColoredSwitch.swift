@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 
-public class ColoredSwitch: UIView {
+public final class ColoredSwitch: UIView {
     
     private var offFrame: CGRect {
         let f = self.frame

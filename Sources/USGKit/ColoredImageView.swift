@@ -59,7 +59,7 @@ public extension ColoredImageView {
     }
 }
 
-public class ColoredImageView: UIImageView {
+public final class ColoredImageView: UIImageView {
     
     private var hasOnTapSound: Bool = true
     

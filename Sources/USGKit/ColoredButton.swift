@@ -21,7 +21,7 @@ public extension ColoredButton {
     
 }
 
-public class ColoredButton: UIView {
+public final class ColoredButton: UIView {
     
     private var label = UILabel()
     private var buttonSound: Bool = true

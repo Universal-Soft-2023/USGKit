@@ -10,7 +10,7 @@ import UIKit
 
 let settingsRowFontSize = 36 * UGKMainFamilyFontMultiplier
 
-public class SettingsRow: UIView {
+public final class SettingsRow: UIView {
     public var text: String? {
         set {
             title.text = newValue
