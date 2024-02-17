@@ -21,116 +21,116 @@ public extension ColoredLabel {
     }
     
     @discardableResult
-    func onTap(_ val: @escaping (() -> Void)) -> Self {
+    func USGonTap(_ val: @escaping (() -> Void)) -> Self {
         self.onTap = val
         return self
     }
     
     @discardableResult
-    func hasOnTapSound(_ val: Bool) -> Self {
+    func USGhasOnTapSound(_ val: Bool) -> Self {
         self.hasOnTapSound = val
         return self
     }
     
     @discardableResult
-    func customOnTapSound(_ val: @escaping (() -> Void)) -> Self {
+    func USGcustomOnTapSound(_ val: @escaping (() -> Void)) -> Self {
         self.customOnTapSound = val
         return self
     }
     
     @discardableResult
-    func mainFamilyFont(_ ofSize: CGFloat) -> Self {
+    func USGmainFamilyFont(_ ofSize: CGFloat) -> Self {
         self.font = .mainFamilyFont(ofSize)
         return self
     }
     
     @discardableResult
-    func font(_ val: UIFont?) -> Self {
+    func USGfont(_ val: UIFont?) -> Self {
         self.font = val
         return self
     }
     
     @discardableResult
-    func systemFont(ofSize: CGFloat) -> Self {
+    func USGsystemFont(ofSize: CGFloat) -> Self {
         self.font = .systemFont(ofSize: ofSize)
         return self
     }
     
     @discardableResult
-    func systemFont(ofSize: CGFloat, weight: UIFont.Weight) -> Self {
+    func USGsystemFont(ofSize: CGFloat, weight: UIFont.Weight) -> Self {
         self.font = .systemFont(ofSize: ofSize, weight: weight)
         return self
     }
     
     @discardableResult
-    func italicSystemFont(ofSize: CGFloat) -> Self {
+    func USGitalicSystemFont(ofSize: CGFloat) -> Self {
         self.font = .italicSystemFont(ofSize: ofSize)
         return self
     }
     
     @discardableResult
-    func boldSystemFont(ofSize: CGFloat) -> Self {
+    func USGboldSystemFont(ofSize: CGFloat) -> Self {
         self.font = .boldSystemFont(ofSize: ofSize)
         return self
     }
     
     @discardableResult
-    func semiboldSystemFont(ofSize: CGFloat) -> Self {
+    func USGsemiboldSystemFont(ofSize: CGFloat) -> Self {
         self.font = .systemFont(ofSize: ofSize, weight: .semibold)
         return self
     }
     
     @discardableResult
-    func lightSystemFont(ofSize: CGFloat) -> Self {
+    func USGlightSystemFont(ofSize: CGFloat) -> Self {
         self.font = .systemFont(ofSize: ofSize, weight: .light)
         return self
     }
     
     @discardableResult
-    func numberOfLines(_ val: Int) -> Self {
+    func USGnumberOfLines(_ val: Int) -> Self {
         self.numberOfLines = val
         return self
     }
     
     @discardableResult
-    func minimumScaleFactor(_ val: CGFloat) -> Self {
+    func USGminimumScaleFactor(_ val: CGFloat) -> Self {
         self.minimumScaleFactor = val
         return self
     }
     
     @discardableResult
-    func adjustsFontSizeToFitWidth(_ val: Bool) -> Self {
+    func USGadjustsFontSizeToFitWidth(_ val: Bool) -> Self {
         self.adjustsFontSizeToFitWidth = val
         return self
     }
     
     @discardableResult
-    func adjustsFontSizeToFitWidthWith(minimumScaleFactor: CGFloat) -> Self {
+    func USGadjustsFontSizeToFitWidthWith(minimumScaleFactor: CGFloat) -> Self {
         self.adjustsFontSizeToFitWidth = true
         self.minimumScaleFactor = minimumScaleFactor
         return self
     }
     
     @discardableResult
-    func textAlignment(_ val: NSTextAlignment) -> Self {
+    func USGtextAlignment(_ val: NSTextAlignment) -> Self {
         self.textAlignment = val
         return self
     }
     
     @discardableResult
-    func textColor(_ val: UIColor) -> Self {
+    func USGtextColor(_ val: UIColor) -> Self {
         self.textColor = val
         return self
     }
     
     @discardableResult
-    func text(_ val: String?) -> Self {
+    func USGtext(_ val: String?) -> Self {
         self.text = val
         return self
     }
     
     @discardableResult
-    func setup(_ closure: (Self) -> Void) -> Self {
+    func USGsetup(_ closure: (Self) -> Void) -> Self {
         closure(self)
         return self
     }
