@@ -13,7 +13,7 @@ public extension ColoredLabel {
 }
 
 public final class ColoredLabel: UILabel {
-    static var def: ColoredLabel {
+    public static var def: ColoredLabel {
         let label = ColoredLabel()
         label.textAlignment = .center
         label.numberOfLines = 1
@@ -25,116 +25,80 @@ public final class ColoredLabel: UILabel {
     }
     
     @discardableResult
-    func USGonTap(_ val: @escaping (() -> Void)) -> Self {
+    public func onTap(_ val: @escaping (() -> Void)) -> Self {
         self.onTap = val
         return self
     }
     
     @discardableResult
-    func USGhasOnTapSound(_ val: Bool) -> Self {
+    public func hasOnTapSound(_ val: Bool) -> Self {
         self.hasOnTapSound = val
         return self
     }
     
     @discardableResult
-    func USGcustomOnTapSound(_ val: @escaping (() -> Void)) -> Self {
+    public func customOnTapSound(_ val: @escaping (() -> Void)) -> Self {
         self.customOnTapSound = val
         return self
     }
     
     @discardableResult
-    func USGmainFamilyFont(_ ofSize: CGFloat) -> Self {
+    public func mainFamilyFont(_ ofSize: CGFloat) -> Self {
         self.font = .mainFamilyFont(ofSize)
         return self
     }
     
     @discardableResult
-    func USGfont(_ val: UIFont?) -> Self {
+    public func font(_ val: UIFont?) -> Self {
         self.font = val
         return self
     }
     
     @discardableResult
-    func USGsystemFont(ofSize: CGFloat) -> Self {
-        self.font = .systemFont(ofSize: ofSize)
-        return self
-    }
-    
-    @discardableResult
-    func USGsystemFont(ofSize: CGFloat, weight: UIFont.Weight) -> Self {
-        self.font = .systemFont(ofSize: ofSize, weight: weight)
-        return self
-    }
-    
-    @discardableResult
-    func USGitalicSystemFont(ofSize: CGFloat) -> Self {
-        self.font = .italicSystemFont(ofSize: ofSize)
-        return self
-    }
-    
-    @discardableResult
-    func USGboldSystemFont(ofSize: CGFloat) -> Self {
-        self.font = .boldSystemFont(ofSize: ofSize)
-        return self
-    }
-    
-    @discardableResult
-    func USGsemiboldSystemFont(ofSize: CGFloat) -> Self {
-        self.font = .systemFont(ofSize: ofSize, weight: .semibold)
-        return self
-    }
-    
-    @discardableResult
-    func USGlightSystemFont(ofSize: CGFloat) -> Self {
-        self.font = .systemFont(ofSize: ofSize, weight: .light)
-        return self
-    }
-    
-    @discardableResult
-    func USGnumberOfLines(_ val: Int) -> Self {
+    public func numberOfLines(_ val: Int) -> Self {
         self.numberOfLines = val
         return self
     }
     
     @discardableResult
-    func USGminimumScaleFactor(_ val: CGFloat) -> Self {
+    public func minimumScaleFactor(_ val: CGFloat) -> Self {
         self.minimumScaleFactor = val
         return self
     }
     
     @discardableResult
-    func USGadjustsFontSizeToFitWidth(_ val: Bool) -> Self {
+    public func adjustsFontSizeToFitWidth(_ val: Bool) -> Self {
         self.adjustsFontSizeToFitWidth = val
         return self
     }
     
     @discardableResult
-    func USGadjustsFontSizeToFitWidthWith(minimumScaleFactor: CGFloat) -> Self {
+    public func adjustsFontSizeToFitWidthWith(minimumScaleFactor: CGFloat) -> Self {
         self.adjustsFontSizeToFitWidth = true
         self.minimumScaleFactor = minimumScaleFactor
         return self
     }
     
     @discardableResult
-    func USGtextAlignment(_ val: NSTextAlignment) -> Self {
+    public func textAlignment(_ val: NSTextAlignment) -> Self {
         self.textAlignment = val
         return self
     }
     
     @discardableResult
-    func USGtextColor(_ val: UIColor) -> Self {
+    public func textColor(_ val: UIColor) -> Self {
         self.textColor = val
         return self
     }
     
     @discardableResult
-    func USGtext(_ val: String?) -> Self {
+    public func text(_ val: String?) -> Self {
         self.text = val
         return self
     }
     
     @discardableResult
-    func USGsetup(_ closure: (Self) -> Void) -> Self {
+    public func setup(_ closure: (Self) -> Void) -> Self {
         closure(self)
         return self
     }
