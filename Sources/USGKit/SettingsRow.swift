@@ -11,6 +11,15 @@ import UIKit
 let settingsRowFontSize = 36 * UGKMainFamilyFontMultiplier
 
 public class SettingsRow: UIView {
+    public var text: String? {
+        set {
+            title.text = newValue
+        }
+        get {
+            title.text
+        }
+    }
+    
     let title = ColoredLabel.def
         .mainFamilyFont(settingsRowFontSize)
         .textAlignment(.left)
@@ -25,7 +34,7 @@ public class SettingsRow: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    init(key: String, text: String) {
+    init(key: String, text: String = "") {
         super.init(frame: .zero)
         title.text = text
         control.key = key
