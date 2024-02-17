@@ -92,7 +92,8 @@ public final class ColoredButton: UIView {
         }
         self.buttonSound = tapSound
         
-        addWithAutolayout(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(label)
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: verticalPadding).isActive = true
         label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: verticalPadding).isActive = true
         label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: verticalPadding).isActive = true

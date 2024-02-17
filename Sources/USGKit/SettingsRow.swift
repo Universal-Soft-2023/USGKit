@@ -41,14 +41,15 @@ public final class SettingsRow: UIView {
     }
     
     func setHierarchy() {
-        self.addWithAutolayout(title)
+        title.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(title)
         title.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         title.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         title.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         title.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 100).isActive = true
         
-        
-        self.addWithAutolayout(control)
+        control.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(control)
         control.heightAnchor.constraint(equalToConstant: 40).isActive = true
         control.widthAnchor.constraint(equalToConstant: 70).isActive = true
         control.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true

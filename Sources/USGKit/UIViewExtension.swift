@@ -32,17 +32,4 @@ public extension UIView {
         self.widthAnchor.constraint(equalTo: superV.widthAnchor, constant: UGKUpperButtonWidth).isActive = true
         self.heightAnchor.constraint(equalTo: superV.heightAnchor, constant: UGKUpperButtonHeight).isActive = true
     }
-    
-    @discardableResult
-    func add(_ newView: UIView) -> UIView {
-        self.addSubview(newView)
-        return self
-    }
-    
-    @discardableResult
-    func addWithAutolayout(_ newView: UIView) -> UIView {
-        newView.translatesAutoresizingMaskIntoConstraints = false
-        add(newView)
-        return newView
-    }
 }
