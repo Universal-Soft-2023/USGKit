@@ -62,7 +62,7 @@ public class ColoredButton: UIView {
         }
     }
     
-    init(
+    public init(
         text: String? = nil,
         font: UIFont? = nil,
         verticalPadding: CGFloat = 0,

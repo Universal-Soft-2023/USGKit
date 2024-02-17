@@ -49,6 +49,12 @@ public extension ColoredLabel {
         self.textAlignment = val
         return self
     }
+    
+    @discardableResult
+    func font(_ val: UIFont?) -> Self {
+        self.font = val
+        return self
+    }
 }
 
 public class ColoredLabel: UILabel {

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 public extension ColoredImageView {
-    static var def: ColoredImageView {
+    public static var def: ColoredImageView {
         let imageView = ColoredImageView()
         imageView.contentMode = .scaleAspectFit
         return imageView
@@ -46,7 +46,7 @@ public extension ColoredImageView {
     }
     
     @discardableResult
-    func coloredImage(_ val: UIImage, color: UIColor) -> Self {
+    public func coloredImage(_ val: UIImage, color: UIColor) -> Self {
         self.themeColor = color
         self.coloredImage = val
         return self
