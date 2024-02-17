@@ -49,55 +49,6 @@ public final class ColoredLabel: UILabel {
     }
     
     @discardableResult
-    public func font(_ val: UIFont?) -> Self {
-        self.font = val
-        return self
-    }
-    
-    @discardableResult
-    public func numberOfLines(_ val: Int) -> Self {
-        self.numberOfLines = val
-        return self
-    }
-    
-    @discardableResult
-    public func minimumScaleFactor(_ val: CGFloat) -> Self {
-        self.minimumScaleFactor = val
-        return self
-    }
-    
-    @discardableResult
-    public func adjustsFontSizeToFitWidth(_ val: Bool) -> Self {
-        self.adjustsFontSizeToFitWidth = val
-        return self
-    }
-    
-    @discardableResult
-    public func adjustsFontSizeToFitWidthWith(minimumScaleFactor: CGFloat) -> Self {
-        self.adjustsFontSizeToFitWidth = true
-        self.minimumScaleFactor = minimumScaleFactor
-        return self
-    }
-    
-    @discardableResult
-    public func textAlignment(_ val: NSTextAlignment) -> Self {
-        self.textAlignment = val
-        return self
-    }
-    
-    @discardableResult
-    public func textColor(_ val: UIColor) -> Self {
-        self.textColor = val
-        return self
-    }
-    
-    @discardableResult
-    public func text(_ val: String?) -> Self {
-        self.text = val
-        return self
-    }
-    
-    @discardableResult
     public func setup(_ closure: (Self) -> Void) -> Self {
         closure(self)
         return self
