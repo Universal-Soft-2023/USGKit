@@ -122,7 +122,7 @@ public class ColoredImageView: UIImageView {
         completion?()
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         if isCircle {
             self.layer.cornerRadius = self.layer.frame.height / 2

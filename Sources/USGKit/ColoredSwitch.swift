@@ -108,7 +108,7 @@ public class ColoredSwitch: UIView {
         self.addGestureRecognizer(tap)
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         if isCircle {
             self.layer.cornerRadius = self.frame.height / 2

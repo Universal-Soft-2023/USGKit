@@ -70,8 +70,8 @@ public class ColoredButton: UIView {
         cornerRadiusDel: Int = 3,
         lines: Int = 1,
         autoscale: Bool = true,
-        color: UIColor = mainThemeColor,
-        textColor: UIColor = mainBackgroundColor,
+        color: UIColor = UGKMainThemeColor,
+        textColor: UIColor = UGKMainBackgroundColor,
         tapSound: Bool = true,
         alignment: NSTextAlignment = .center,
         onTap: (() -> Void)? = nil
@@ -117,7 +117,7 @@ public class ColoredButton: UIView {
         completion?()
     }
     
-    override func layoutSubviews() {
+    public override func layoutSubviews() {
         super.layoutSubviews()
         self.layer.cornerRadius = self.frame.height / CGFloat(cornerRadiusDel)
         self.layer.masksToBounds = true

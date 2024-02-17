@@ -1,7 +1,7 @@
 import XCTest
-@testable import UniversalGamesKit
+@testable import USGKit
 
-final class UniversalGamesKitTests: XCTestCase {
+final class USGKitTests: XCTestCase {
     func testExample() throws {
         // XCTest Documentation
         // https://developer.apple.com/documentation/xctest
