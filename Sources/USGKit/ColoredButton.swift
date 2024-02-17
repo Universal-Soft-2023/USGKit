@@ -44,7 +44,7 @@ public final class ColoredButton: UIView {
         }
     }
     
-    var text: String? {
+    public var text: String? {
         set {
             label.text = newValue
         }
@@ -53,7 +53,7 @@ public final class ColoredButton: UIView {
         }
     }
     
-    var font: UIFont? {
+    public var font: UIFont? {
         set {
             label.font = newValue
         }
