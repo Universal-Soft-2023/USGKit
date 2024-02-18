@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-let settingsRowFontSize = 36 * USGMainFamilyFontMultiplier
+let settingsRowFontSize = 36 * USGMainFamilyFontMultiplier * screenHeightMultiplyer
 
 public final class SettingsRow: UIView {
     public var text: String? {
@@ -46,12 +46,12 @@ public final class SettingsRow: UIView {
         title.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         title.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         title.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        title.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 100).isActive = true
+        title.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 100 * screenWidthMultiplyer).isActive = true
         
         control.translatesAutoresizingMaskIntoConstraints = false
         addSubview(control)
-        control.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        control.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        control.heightAnchor.constraint(equalToConstant: 40 * screenHeightMultiplyer).isActive = true
+        control.widthAnchor.constraint(equalToConstant: 70 * screenHeightMultiplyer).isActive = true
         control.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         control.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         
