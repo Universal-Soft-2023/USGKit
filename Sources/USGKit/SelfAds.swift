@@ -61,7 +61,7 @@ public enum SelfAds: CaseIterable {
     
     
     var uiImage: UIImage? {
-        let postfix = ""
+        let postfix = ".png"
         switch self {
             
         case .picrotator:
