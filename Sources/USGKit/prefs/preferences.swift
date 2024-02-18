@@ -26,9 +26,9 @@ public var USGDefaultColoredButtonOnTapSound: (() -> Void) = {}
 public var USGDefaultColoredImageViewOnTapSound: (() -> Void) = {}
 public var USGDefaultColoredSwitchOnTapSound: (() -> Void) = {}
 
-public var USGSelfAdsThisApp: SelfAds?
-public var USGSelfAdsExcept: [SelfAds] = []
-public var USGSelfAdsUpdateSeconds: Double = 60
+//public var USGSelfAdsThisApp: SelfAds?
+//public var USGSelfAdsExcept: [SelfAds] = []
+//public var USGSelfAdsUpdateSeconds: Double = 60
 
 
 
