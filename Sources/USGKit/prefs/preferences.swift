@@ -17,9 +17,9 @@ public var USGMainThemeColor: UIColor = .black
 public var USGColoredSwitchDefaultIsCircleValue = true
 
 public var USGUpperButtonSideInset: CGFloat = 30 * screenWidthMultiplyer
-public var USGUpperButtonTopInset: CGFloat = 60 * screenHeightMultiplyer
+public var USGUpperButtonTopInset: CGFloat = 70 - (isOldScreen ? 30 : 0)
 public var USGUpperButtonWidth: CGFloat = 60 * screenHeightMultiplyer
-public var USGUpperButtonHeight: CGFloat = 70 - (isOldScreen ? 30 : 0)
+public var USGUpperButtonHeight: CGFloat = 60 * screenHeightMultiplyer
 
 public var USGDefaultColoredLabelOnTapSound: (() -> Void) = {}
 public var USGDefaultColoredButtonOnTapSound: (() -> Void) = {}
