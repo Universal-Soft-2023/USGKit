@@ -61,37 +61,38 @@ public enum SelfAds: CaseIterable {
     
     
     var uiImage: UIImage? {
-        let postfix = ""
+        let postfix = ".png"
+        let prefix = "Assets/"
         switch self {
             
         case .picrotator:
-            return UIImage(named: "Picrotator" + postfix)
+            return UIImage(contentsOfFile: prefix + "Picrotator" + postfix)
         case .mathCountdown:
-            return UIImage(named: "MathCountdown" + postfix)
+            return UIImage(contentsOfFile: prefix + "MathCountdown" + postfix)
         case .bricksCountdown:
-            return UIImage(named: "BricksCountdown" + postfix)
+            return UIImage(contentsOfFile: prefix + "BricksCountdown" + postfix)
         case .rainbowmania:
-            return UIImage(named: "Rainbowmania" + postfix)
+            return UIImage(contentsOfFile: prefix + "Rainbowmania" + postfix)
         case .japaneseRiver:
-            return UIImage(named: "JapaneseRiver" + postfix)
+            return UIImage(contentsOfFile: prefix + "JapaneseRiver" + postfix)
         case .justBricks:
-            return UIImage(named: "JustBricks" + postfix)
+            return UIImage(contentsOfFile: prefix + "JustBricks" + postfix)
         case .bricksRacer:
-            return UIImage(named: "BricksRacer" + postfix)
+            return UIImage(contentsOfFile: prefix + "BricksRacer" + postfix)
         case .bricksSeries:
-            return UIImage(named: "BrisksSeries" + postfix)
+            return UIImage(contentsOfFile: prefix + "BrisksSeries" + postfix)
         case .stackAttack:
-            return UIImage(named: "StackAttack" + postfix)
+            return UIImage(contentsOfFile: prefix + "StackAttack" + postfix)
         case .byDeveloper:
-            return UIImage(named: "ByDeveloper" + postfix)
+            return UIImage(contentsOfFile: prefix + "ByDeveloper" + postfix)
         case .capitalMania:
-            return UIImage(named: "Capitalmania" + postfix)
+            return UIImage(contentsOfFile: prefix + "Capitalmania" + postfix)
         case .flagMania:
-            return UIImage(named: "Flagmania" + postfix)
+            return UIImage(contentsOfFile: prefix + "Flagmania" + postfix)
         case .gridPainter:
-            return UIImage(named: "GridPainter" + postfix)
+            return UIImage(contentsOfFile: prefix + "GridPainter" + postfix)
         case .clearGrid:
-            return UIImage(named: "ClearGrid" + postfix)
+            return UIImage(contentsOfFile: prefix + "ClearGrid" + postfix)
         }
     }
     
