@@ -96,8 +96,8 @@ public final class ColoredButton: UIView {
         addSubview(label)
         label.topAnchor.constraint(equalTo: self.topAnchor, constant: verticalPadding).isActive = true
         label.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: verticalPadding).isActive = true
-        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: verticalPadding).isActive = true
-        label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: verticalPadding).isActive = true
+        label.leftAnchor.constraint(equalTo: self.leftAnchor, constant: horizontalPadding).isActive = true
+        label.rightAnchor.constraint(equalTo: self.rightAnchor, constant: horizontalPadding).isActive = true
 
         
         self.cornerRadiusDel = cornerRadiusDel
