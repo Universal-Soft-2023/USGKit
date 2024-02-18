@@ -139,7 +139,7 @@ public class SelfAdsView: UIImageView {
     }
     var timer = Timer()
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setSubviews()
     }
