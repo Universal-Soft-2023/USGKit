@@ -70,8 +70,8 @@ public final class ColoredButton: UIView {
         cornerRadiusDel: Int = 3,
         lines: Int = 1,
         autoscale: Bool = true,
-        color: UIColor = UGKMainThemeColor,
-        textColor: UIColor = UGKMainBackgroundColor,
+        color: UIColor = USGMainThemeColor,
+        textColor: UIColor = USGMainBackgroundColor,
         tapSound: Bool = true,
         alignment: NSTextAlignment = .center,
         onTap: (() -> Void)? = nil

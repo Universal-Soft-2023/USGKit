@@ -33,7 +33,7 @@ public final class ColoredSwitch: UIView {
         )
     }
     
-    var mainColor: UIColor = UGKMainThemeColor {
+    var mainColor: UIColor = USGMainThemeColor {
         didSet {
             switcher.backgroundColor = mainColor
             self.layer.borderColor = mainColor.cgColor
@@ -66,7 +66,7 @@ public final class ColoredSwitch: UIView {
     
     init(
         key: String,
-        mainColor: UIColor = UGKMainThemeColor,
+        mainColor: UIColor = USGMainThemeColor,
         backgroundColor: UIColor = UIColor(white: 0, alpha: 0.3),
         isCircle: Bool = USGColoredSwitchDefaultIsCircleValue,
         borderWidth: CGFloat = 4,

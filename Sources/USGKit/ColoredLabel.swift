@@ -19,7 +19,7 @@ public final class ColoredLabel: UILabel {
         label.numberOfLines = 1
         label.minimumScaleFactor = 0.2
         label.adjustsFontSizeToFitWidth = true
-        label.textColor = UGKMainThemeColor
+        label.textColor = USGMainThemeColor
         label.hasOnTapSound = true
         return label
     }

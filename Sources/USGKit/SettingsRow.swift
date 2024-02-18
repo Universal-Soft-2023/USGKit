@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-let settingsRowFontSize = 36 * UGKMainFamilyFontMultiplier
+let settingsRowFontSize = 36 * USGMainFamilyFontMultiplier
 
 public final class SettingsRow: UIView {
     public var text: String? {

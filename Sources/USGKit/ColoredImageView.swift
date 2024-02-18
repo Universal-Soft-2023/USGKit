@@ -65,7 +65,7 @@ public final class ColoredImageView: UIImageView {
     
     private var isCircle: Bool = false
     
-    var themeColor: UIColor? = UGKMainThemeColor
+    var themeColor: UIColor? = USGMainThemeColor
 
     var coloredImage: UIImage? {
         set {

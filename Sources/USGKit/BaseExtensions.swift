@@ -16,6 +16,6 @@ public extension Int {
 
 public extension UIFont {
     static func mainFamilyFont(_ size: CGFloat) -> UIFont {
-        return UIFont(name: UGKMainFontFamily, size: size * UGKMainFamilyFontMultiplier) ?? .systemFont(ofSize: size)
+        return UIFont(name: USGMainFontFamily, size: size * USGMainFamilyFontMultiplier) ?? .systemFont(ofSize: size)
     }
 }

@@ -8,13 +8,27 @@
 import Foundation
 import UIKit
 
-public var UGKMainFontFamily: String = "Marker felt"
-public var UGKMainFamilyFontMultiplier: CGFloat = 1
+public var USGMainFontFamily: String = "Marker felt"
+public var USGMainFamilyFontMultiplier: CGFloat = 1
 
-public var UGKMainBackgroundColor: UIColor = .white
-public var UGKMainThemeColor: UIColor = .black
+public var USGMainBackgroundColor: UIColor = .white
+public var USGMainThemeColor: UIColor = .black
 
-public var USGColoredSwitchDefaultIsCircleValue = false
+public var USGColoredSwitchDefaultIsCircleValue = true
+
+public var USGUpperButtonSideInset: CGFloat = 30 * screenWidthMultiplyer
+public var USGUpperButtonTopInset: CGFloat = 60 * screenHeightMultiplyer
+public var USGUpperButtonWidth: CGFloat = 60 * screenHeightMultiplyer
+public var USGUpperButtonHeight: CGFloat = 70 - (isOldScreen ? 30 : 0)
+
+public var USGDefaultColoredLabelOnTapSound: (() -> Void) = {}
+public var USGDefaultColoredButtonOnTapSound: (() -> Void) = {}
+public var USGDefaultColoredImageViewOnTapSound: (() -> Void) = {}
+public var USGDefaultColoredSwitchOnTapSound: (() -> Void) = {}
+
+public var USGSelfAdsThisApp: SelfAds?
+public var USGSelfAdsExcept: [SelfAds] = []
+public var USGSelfAdsUpdateSeconds: Double = 60
 
 
 
@@ -62,36 +76,6 @@ public var isOldScreen: Bool {
 
 
 
-public var UGKUpperButtonSideInset: CGFloat = 30 * screenWidthMultiplyer
-public var UGKUpperButtonTopInset: CGFloat = 60 * screenHeightMultiplyer
-public var UGKUpperButtonWidth: CGFloat = 60 * screenHeightMultiplyer
-public var UGKUpperButtonHeight: CGFloat = 70 - (isOldScreen ? 30 : 0)
 
 
 
-
-
-
-
-
-public var USGDefaultColoredLabelOnTapSound: (() -> Void) = {
-}
-
-public var USGDefaultColoredButtonOnTapSound: (() -> Void) = {
-}
-
-public var USGDefaultColoredImageViewOnTapSound: (() -> Void) = {
-}
-
-public var USGDefaultColoredSwitchOnTapSound: (() -> Void) = {
-}
-
-
-
-public var USGSelfAdsThisApp: SelfAds?
-
-public var USGSelfAdsExcept: [SelfAds] = [
-    
-]
-
-public var USGSelfAdsUpdateSeconds: Double = 60
