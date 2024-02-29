@@ -27,7 +27,7 @@ public extension UIView {
     
     func rightUpperButtonConstraints() {
         guard let superV = superview else { return }
-        self.rightAnchor.constraint(equalTo: superV.rightAnchor, constant: USGUpperButtonSideInset).isActive = true
+        self.rightAnchor.constraint(equalTo: superV.rightAnchor, constant: -USGUpperButtonSideInset).isActive = true
         self.topAnchor.constraint(equalTo: superV.topAnchor, constant: USGUpperButtonTopInset).isActive = true
         self.widthAnchor.constraint(equalToConstant: USGUpperButtonWidth).isActive = true
         self.heightAnchor.constraint(equalToConstant: USGUpperButtonHeight).isActive = true
