@@ -17,19 +17,19 @@ public extension UIView {
         self.backgroundColor = USGMainThemeColor
     }
     
-    func leftUpperButtonConstraints() {
+    func leftUpperButtonConstraints(size: CGFloat? = nil) {
         guard let superV = superview else { return }
         self.leftAnchor.constraint(equalTo: superV.leftAnchor, constant: USGUpperButtonSideInset).isActive = true
         self.topAnchor.constraint(equalTo: superV.topAnchor, constant: USGUpperButtonTopInset).isActive = true
-        self.widthAnchor.constraint(equalToConstant: USGUpperButtonWidth).isActive = true
-        self.heightAnchor.constraint(equalToConstant: USGUpperButtonHeight).isActive = true
+        self.widthAnchor.constraint(equalToConstant: size ?? USGUpperButtonWidth).isActive = true
+        self.heightAnchor.constraint(equalToConstant: size ?? USGUpperButtonHeight).isActive = true
     }
     
-    func rightUpperButtonConstraints() {
+    func rightUpperButtonConstraints(size: CGFloat? = nil) {
         guard let superV = superview else { return }
         self.rightAnchor.constraint(equalTo: superV.rightAnchor, constant: -USGUpperButtonSideInset).isActive = true
         self.topAnchor.constraint(equalTo: superV.topAnchor, constant: USGUpperButtonTopInset).isActive = true
-        self.widthAnchor.constraint(equalToConstant: USGUpperButtonWidth).isActive = true
-        self.heightAnchor.constraint(equalToConstant: USGUpperButtonHeight).isActive = true
+        self.widthAnchor.constraint(equalToConstant: size ?? USGUpperButtonWidth).isActive = true
+        self.heightAnchor.constraint(equalToConstant: size ?? USGUpperButtonHeight).isActive = true
     }
 }
